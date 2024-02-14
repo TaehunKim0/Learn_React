@@ -1,6 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Counter from "./pages/Counter";
+import Input from "./pages/Input";
+import MultipleInput from "./pages/MultipleInput";
+import UserList from "./pages/List";
 
 function App() {
 
@@ -10,6 +17,22 @@ function App() {
 
   return (
     <div className="App">
+      <nav>
+        <Link to='/'>Home</Link> |
+        <Link to='/about'>About</Link> |
+        <Link to='/counter'>Counter</Link> |
+        <Link to='/input'>Input</Link> |
+        <Link to='/multipleInput'>MultipleInput</Link> |
+        <Link to='/userList'>UserList</Link> |
+      </nav>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/about' element={<About/>} />
+        <Route path='/counter' element={<Counter/>} />
+        <Route path='/input' element={<Input/>} />
+        <Route path='/multipleInput' element={<MultipleInput/>} />
+        <Route path='/userList' element={<UserList/>} />
+      </Routes>
 
       <div className="black-nav">
         <h4 style={{color : 'red', fontSize : '20px'}}>{blog}</h4>
